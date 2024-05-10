@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.7 Переменные root и Функция calc</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="lesson-menu">
+        <h1>5.7 Переменные root и Функция calc</h1>
+        <p>
+          В этом уроке я расскажу про переменные и вычисляемые значения на CSS,
+          а так же покажу как проверять функции и возможности языков, таких как
+          HTML, CSS, JS на совместимость в разных браузерах.
+        </p>
+        <a href="https://caniuse.com/" target="_blank"
+          >Сайт для проверки поддержки разных возможностей браузерами</a
+        >
+        <ol>
+          <li>
+            <b>Как добавить переменные на CSS</b>
+            <p>
+              Расскажу как использовать переменные на CSS. Мы добавим глобальные
+              переменные в root, чтобы использовать их в любом месте CSS
+              документа. <br />
+              Я покажу как объявить переменную на CSS, как использовать
+              переменную и расскажу про поддержку переменных на CSS в разных
+              браузерах.
+            </p>
+            <a
+              href="https://developer.mozilla.org/ru/docs/Web/CSS/:root"
+              target="_blank"
+            >
+              Документация</a
+            >
+          </li>
+          <li>
+            <b>Вычисление значений на CSS</b>
+            <p>
+              Покажу как вычислять значения на CSS с помощью функции calc().
+              Функция calc на CSS позволяет выполнять сложение, вычитание,
+              умножение и деление над значениями разных типов.
+            </p>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/calc"
+              target="_blank"
+              >Документация</a
+            >
+          </li>
+        </ol>
+      </div>
+      <div class="lesson-content">
+        <p>
+          Создание переменной в CSS выполняется при помощи селектора
+          <b>":root"</b> где указываются переменные видимые в любом месте
+          документа.
+        </p>
+        <pre>
+          :root {
+            --color1: #05b1b1;
+            --color2: #52339a;
+            --bgc_block: #aff08e;
+          }
+        </pre>
+        <p>
+          Переменные для цветов создаются, что бы ла возможность изменить
+          Пименяемый в элементах цвет при помощи изменения его в однойм месте, в
+          переменной. И цвет изменится во всем докумнете. Не мужно выискивать
+          каждый элемент и в ручную исправлять его. <br />
+          <b
+            >Название переменным можно давай любые, (например: описывающие их
+            назначение)</b
+          >
+        </p>
+
+        <p>
+          Чтобы вызвать значение переменной нужно указать конструкцию:
+          <b>"var(--color1)"</b>
+        </p>
+        <pre>
+            .wrapper {
+              padding: 0 100px;
+              background-color: var(--bgc_block);
+            }
+          </pre
+        >
+        <p>
+          При вызывании переменной
+          <b>можно указывать через запятую втрой цвет,</b>
+          который будет появляться в случаии если произойдет какая то ошибка с
+          переменной
+        </p>
+        <pre>
+            .wrapper {
+              padding: 0 100px;
+              background-color: var(--bgc_block, yellow);
+            }
+          </pre
+        >
+        <p>
+          Так же можно создать пеерменную с значением размера в пикселях
+          например, и прменить ее к блоку:
+        </p>
+        <pre>
+            :root {
+              --size: 600px;
+            }
+            
+            .block{
+              width: var(--size);
+            }
+        </pre>
+        <h3>Свойство "calc" в "CSS"</h3>
+        <p>
+          Данной свойство помогает вычеслять значения при помощи математических
+          операторов (+ - / *)
+        </p>
+        <p>
+          Суть использования свойства <b>"calc"</b> это
+          <u
+            >функция которая помогает расчитывать Ширину или Высоту Дочернего
+            элемента относительно Родительского элемента.</u
+          >
+        </p>
+        <p>
+          На примере ниже зададим размер дочернему элементу при помощи свойства
+          <b>"calc"</b>
+        </p>
+        <ul>
+          <li>
+            Задаем свойства <u>Pодительскому элементу:</u>
+            <pre>
+              .box-paret {
+                background-color: var(--color1);
+                border: 2px solid #fa3904;
+              }
+            </pre>
+          </li>
+
+          <li>
+            Задаем свойства
+            <u>Дочернему элементу: c использованием свойства "calc"</u>
+            <pre>
+              .box-parent__child {
+                background-color: var(--color2);
+                border: 2px solid #419c2b;
+                margin: 0 auto;
+                <u>width: <b>calc(100% / 3);</b></u>
+              }
+            </pre>
+          </li>
+        </ul>
+        <p>
+          <u>В свойство "calc" можно вставять CSS <b>переменные</b>.</u>
+          (которые содержат числовые значения)
+        </p>
+        <p>
+          Пример создание числовой переменной и применение ее в свойстве
+          <b>"calc"</b>s
+        </p>
+        <pre>
+          :root {
+            --colNums: 4;
+          }
+          .box-parent__child {
+            <u>width: calc(100% / <b>var(--colNums)</b>);</u>
+          }
+        </pre>
+        <!-- Блоки для показания работы свойства "calc" -->
+        <div class="box-paret">
+          <div class="box-parent__child">1</div>
+        </div>
+      </div>
+      <p>Полезные ссылки:</p>
+      <ol>
+        <li>
+          <a
+            href="https://www.youtube.com/playlist?list=PLuY6eeDuleIM2_X9rA_5DDE0rX9cjUQoX"
+            target="_blank"
+            >Работа с препроцессорами</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/playlist?list=PLuY6eeDuleIPKCe3dSJfqkGXS-Ebky02v"
+            target="_blank"
+            >Верстка на Flexbox + Less</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/playlist?list=PLuY6eeDuleIMEIav0T-g0VBM52C3cAhLC"
+            target="_blank"
+            >Верстка на Bootstrap + Sass</a
+          >
+        </li>
+      </ol>
+    </div>
+
+    <!-- Самостоятельно просмотреть на You-tube канале работу с припроцессорами "Sass" !!! -->
+  </body>
+</html>
