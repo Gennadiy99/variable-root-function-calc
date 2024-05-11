@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --color1: #05b1b1;
+  --color2: #52339a;
+  --bgc_block: #aff08e;
+  --size: 600px;
+  --colNums: 4;
+}
+.wrapper {
+  padding: 0 100px;
+  background-color: var(--bgc_block, yellow);
+}
+.lesson-content li {
+  margin-bottom: 10px;
+}
+/* Блоки для показания работы свойства "calc" */
+.box-paret {
+  background-color: var(--color1);
+  border: 2px solid #fa3904;
+}
+.box-parent__child {
+  background-color: var(--color2);
+  border: 2px solid #419c2b;
+  margin: 0 auto;
+  width: calc(100% / 3);
+  width: calc(100% / var(--colNums));
+  padding: 0 calc(100% - 97%);
+  padding: 0 3%;
+}
+.btnDiv a {
+  text-decoration: none;
+  color: #f6f4f4;
+}
+.btnDiv {
+  text-align: center;
+  max-width: 208px;
+  padding: 0 4px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+a {
+  color: #05b1b1;
+}
+a:hover {
+  color: #fa0404;
+}
+a:active {
+  color: #df09ad;
+}
+/* a:visited{
+  color: #fa3904;
+} */
+.lesson-content__h3 {
+  padding: 5px;
+  display: block;
+  color: #f9f6f6;
+}
+.bg_color2 {
+  background-color: var(--color2);
+}
+.bg_color1 {
+  background-color: var(--color1);
+}
+.posit_relat {
+  position: relative;
+}
+.posit_stiky {
+  position: sticky;
+  top: 0;
+}
+.wrap {
+  background-color: #a4a3a3;
+}

@@ -1,16 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5.7 Переменные root и Функция calc</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
   </head>
   <body>
     <div class="wrapper">
       <div class="lesson-menu">
         <h1>5.7 Переменные root и Функция calc</h1>
+        <div class="bg_color1 btnDiv">
+          <a href="#CSS">Создание переменной в CSS</a>
+        </div>
+        <div class="bg_color2 btnDiv">
+          <a href="#calc">Свойство "calc" в "CSS"</a>
+        </div>
         <p>
           В этом уроке я расскажу про переменные и вычисляемые значения на CSS,
           а так же покажу как проверять функции и возможности языков, таких как
@@ -52,19 +57,25 @@
           </li>
         </ol>
       </div>
-      <div class="lesson-content">
+      <div class="lesson-content posit_relat">
+        <h3 class="lesson-content__h3 posit_stiky bg_color1">
+          <a name="CSS"></a>
+          Создание переменной в CSS
+        </h3>
         <p>
           Создание переменной в CSS выполняется при помощи селектора
           <b>":root"</b> где указываются переменные видимые в любом месте
           документа.
         </p>
-        <pre>
-          :root {
-            --color1: #05b1b1;
-            --color2: #52339a;
-            --bgc_block: #aff08e;
-          }
-        </pre>
+        <div class="wrap">
+          <pre>
+            :root {
+              --color1: #05b1b1;
+              --color2: #52339a;
+              --bgc_block: #aff08e;
+            }
+          </pre>
+        </div>
         <p>
           Переменные для цветов создаются, что бы ла возможность изменить
           Пименяемый в элементах цвет при помощи изменения его в однойм месте, в
@@ -113,7 +124,10 @@
               width: var(--size);
             }
         </pre>
-        <h3>Свойство "calc" в "CSS"</h3>
+        <h3 class="lesson-content__h3 posit_stiky bg_color2">
+          <a name="calc"></a>
+          Свойство "calc" в "CSS"
+        </h3>
         <p>
           Данной свойство помогает вычеслять значения при помощи математических
           операторов (+ - / *)
@@ -198,6 +212,10 @@
           >
         </li>
       </ol>
+      <a href="https://www.youtube.com/watch?v=bbnnSAMyLmU&t=1247s">
+        Ссылка на Уроки немекого</a
+      >
+      <area shape="" coords="" href="" alt="" />
     </div>
 
     <!-- Самостоятельно просмотреть на You-tube канале работу с припроцессорами "Sass" !!! -->
