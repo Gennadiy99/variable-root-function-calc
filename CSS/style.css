@@ -105,3 +105,6 @@ a:active {
 .wrap {
   background-color: #a4a3a3;
 }
+pre{
+  overflow: auto;
+}
