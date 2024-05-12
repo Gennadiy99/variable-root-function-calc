@@ -1,0 +1,30 @@
+html, body {
+  margin: 10px;
+  padding: 15px;
+}
+
+body #header a {
+  font-size: 20px;
+  border: 5cap solid #000;
+  padding: 10px;
+}
+
+body #header {
+  background: #ffffff;
+  width: 10px 25px;
+  color: rgb(113, 111, 111);
+}
+body #header p.container {
+  border-radius: 10px;
+}
+body #header a {
+  text-decoration: none;
+}
+body #header a:hover {
+  text-decoration: underline;
+  color: #df09ad;
+}
+body .error {
+  color: #ff0000;
+  background: #c9c9c9;
+}/*# sourceMappingURL=main.css.map */

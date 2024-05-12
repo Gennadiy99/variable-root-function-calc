@@ -4,14 +4,32 @@
 :root {
   --color1: #05b1b1;
   --color2: #52339a;
-  --bgc_block: #aff08e;
+  --bgc_block1: #aff08e;
+  --bgc_block2: #8ef0e3;
+  --bgc_block3: #bab8f5;
   --size: 600px;
   --colNums: 4;
 }
-.wrapper {
-  padding: 0 100px;
-  background-color: var(--bgc_block, yellow);
+@media (max-width: 415px) {
+  .wrapper {
+    padding: 0 20px;
+    background-color: var(--bgc_block1, yellow);
+  }
 }
+
+@media (min-width: 416px) {
+  .wrapper {
+    padding: 0 50px;
+    background-color: var(--bgc_block2, yellow);
+  }
+}
+@media (min-width: 650px) {
+  .wrapper {
+    padding: 0 100px;
+    background-color: var(--bgc_block3, yellow);
+  }
+}
+
 .lesson-content li {
   margin-bottom: 10px;
 }
@@ -59,9 +77,23 @@ a:active {
 }
 .bg_color2 {
   background-color: var(--color2);
+  border: 2px solid var(--color1);
+}
+.bg_color2 > a:hover {
+  color: #33ea06;
+}
+.bg_color1 > a:hover {
+  color: #db3904;
+}
+.bg_color2:hover {
+  border: 2px solid var(--color2);
+}
+.bg_color1:hover {
+  border: 2px solid var(--color1);
 }
 .bg_color1 {
   background-color: var(--color1);
+  border: 2px solid var(--color2);
 }
 .posit_relat {
   position: relative;
